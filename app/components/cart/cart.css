@@ -1,4 +1,4 @@
-/*cart {
+cart {
   display: block;
 }
 cart .line-item{
@@ -15,4 +15,4 @@ cart .line-item>input{
 
 cart .total{
   font-family: monospace;
-}*/
+}

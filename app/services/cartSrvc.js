@@ -1,34 +1,25 @@
 angular.module('ecommerce').service('cartSrvc', function(){
-  let cart = [{
-        amount:1,
-        product:{name:'Space Fruit',
-        imageUrl:'https://ctl.s6img.com/society6/img/TtK7KWlA4hPvW98_g3IMjwK5vXc/h_550,w_550/tshirts/men/greybg/black/~artwork,bg_FFFFFFFF/s6-0025/a/11385279_14899658/~~/lunar-fruit-tshirts.jpg',
-        description:'These stylish shoes are great for throwing at people.  Holding pencils.  Also could be worn on feet.',
-        price:30
-      }}
-  ];
+  // Creating a cart.  In a real app we would store this either
+  // in the app storage, or send it to the backend and save it
+  // on our server.
+  let cart = [];
 
+  // Basic add a new line item when we add an item, with amt 1.
   this.addItem = function(newItem){
-    cart.push({
-      amount:1,
-      product:newItem
-    })
+    cart.push(Object.assign({}, {amt:1,product:newItem}));
   }
 
-  this.getTotal = function(){
-    return cart.reduce((total, lineItem)=>{
-      return total + lineItem.amount * lineItem.product.price
-    }, 0)
-  }
-
+  // return the card object
   this.getCart = function(){
     return cart;
   }
 
-  this.getNumberItems = function(){
-    return cart.reduce((total, lineItem)=>{
-      return total + lineItem.amount
-    }, 0)
+  // return the total value of the cart.  This way we can write it once
+  // and use it anywhere we need to. 
+  this.total = function(){
+    return cart.reduce((total, item)=>{
+      return total+item.product.price*item.amt
+    },0);
   }
 
 })

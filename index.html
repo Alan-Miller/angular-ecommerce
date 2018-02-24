@@ -3,19 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="/app/css/main.css">
+    <link rel="stylesheet" href="app/css/main.css">
+    <!-- In this example I've broken up the CSS into seperate file for each
+      component.  You could use fewer css files if you want, or use a gulp task to
+      consolidate all of them into a single file. -->
+    <link rel="stylesheet" href="app/components/product/product.css">
+    <link rel="stylesheet" href="app/components/my-header/my-header.css">
+    <link rel="stylesheet" href="app/components/cart/cart.css">
+    <link rel="stylesheet" href="app/components/cart-chip/cart-chip.css">
   </head>
   <body>
-    <div> Replace Me with the my-header componenet once created.</div>
+    <my-header></my-header>
     <ui-view></ui-view>
+    <!-- CDN for angular and angular-ui-router -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js" charset="utf-8"></script>
+
+    <!-- Here we are loading in our scripts for our javascript -->
     <script src="app/app.js" charset="utf-8"></script>
-    <script src="app/routes.js" charset="utf-8"></script>
 
     <script src="app/views/components/componentsCtrl.js" charset="utf-8"></script>
-    <script src="app/views/home/homeCtrl.js" charset="utf-8"></script>
-    <script src="app/views/productList/productListCtrl.js" charset="utf-8"></script>
+
+    <script src="app/components/product/product.js" charset="utf-8"></script>
+    <script src="app/components/my-header/my-header.js" charset="utf-8"></script>
+    <script src="app/components/cart/cart.js" charset="utf-8"></script>
+    <script src="app/components/cart-chip/cart-chip.js" charset="utf-8"></script>
 
     <script src="app/services/cartSrvc.js" charset="utf-8"></script>
     <script src="app/services/productSrvc.js" charset="utf-8"></script>

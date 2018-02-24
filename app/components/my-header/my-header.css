@@ -1,14 +1,17 @@
-/*my-header {
+my-header {
+  display:block;
+}
+
+my-header nav{
   display: flex;
   align-content: flex-end;
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 my-header a{
   flex:1;
+
   display: inline-block;
   margin-left: 40px;
   font-family: sans-serif;
-}*/
+}

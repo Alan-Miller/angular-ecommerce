@@ -1,8 +1,7 @@
-/*product {
-  display:flex;
-  min-height:200px;
+producto {
+  display:block;
 }
-product .picture{
+producto .picture{
   background-color:#eee;
   display:inline-block;
   width:300px;
@@ -11,14 +10,14 @@ product .picture{
   background-repeat: no-repeat;
 }
 
-product .padded{
+producto .padded{
   padding:20px;
   border: 1px solid #ddd;
   width:100%;
 }
 
-product h1{
+producto h1{
   margin: 0;
   font-size: 2em;
   font-weight: bolder;
-}*/
+}
